@@ -10,10 +10,10 @@
  	nodeRequire: require
  });
 
- function initializeApp(config, configApp, http){
+ function initializeApp(config, configApp, http, init_db){
  	http.createServer(configApp.configApp).listen(config.server_port, function(){
  		console.log('Server running on ' + config.server_port);
  	});
  }
 
- requirejs(['config/config', 'config/app', 'http'], initializeApp);
+ requirejs(['config/config', 'config/app', 'http', 'db_api/init_db'], initializeApp);
